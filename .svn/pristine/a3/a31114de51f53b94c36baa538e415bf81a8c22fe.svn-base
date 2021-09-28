@@ -1,0 +1,6 @@
+package com.digiteka.sdk;
+
+public interface DigitekaEvent {
+    public void sdkReady();
+    public void onError();
+}

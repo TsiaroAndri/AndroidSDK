@@ -1,0 +1,18 @@
+R_DEF: Internal format may change without notice
+local
+drawable close_button
+drawable delete
+drawable ic_baseline_close_24
+id bottom
+id bottom_left
+id bottom_right
+id btn_close
+id digiteka_player
+id top_left
+id top_right
+layout bottom_left
+layout bottom_right
+layout fragment_player_web
+layout top_left
+layout top_right
+string hello_blank_fragment

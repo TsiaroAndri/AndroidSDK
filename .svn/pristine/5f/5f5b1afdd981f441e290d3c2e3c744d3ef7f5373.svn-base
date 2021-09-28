@@ -1,0 +1,11 @@
+com/digiteka/digiteka_sdk_mobile/DemoCmp.java
+ com.digiteka.digiteka_sdk_mobile.DemoCmp
+com/digiteka/digiteka_sdk_mobile/BuildConfig.java
+ com.digiteka.digiteka_sdk_mobile.BuildConfig
+com/digiteka/digiteka_sdk_mobile/MainActivity.java
+ com.digiteka.digiteka_sdk_mobile.MainActivity
+ com.digiteka.digiteka_sdk_mobile.MainActivity$1
+ com.digiteka.digiteka_sdk_mobile.MainActivity$2
+ com.digiteka.digiteka_sdk_mobile.MainActivity$3
+com/digiteka/digiteka_sdk_mobile/Demo.java
+ com.digiteka.digiteka_sdk_mobile.Demo

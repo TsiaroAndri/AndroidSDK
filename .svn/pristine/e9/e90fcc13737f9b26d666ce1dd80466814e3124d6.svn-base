@@ -1,0 +1,10 @@
+package mg.ima.digitekaplayerweb;
+
+public class ConstanteURL {
+    public static final String CONST = "http://41.188.46.8:8080/digiteka/";
+    public static final String CONST_LOCAL = "http://192.168.137.1/PageDigiteka/";
+    public ConstanteURL() {
+    }
+
+
+}

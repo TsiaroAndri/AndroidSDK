@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="pixel" />
+        <device id="Nexus 7" />
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1bdda207-7609-48f3-bcb1-ce524c5073ec" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/digitekaplayerweb">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="digiteka_sdk_mobile" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="digiteka_sdk_mobile" type="f1a62948:ProjectNode" />
+                <item name="digitekaplayerweb" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="digiteka_sdk_mobile" type="f1a62948:ProjectNode" />
+                <item name="digitekaplayerweb" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="digiteka_sdk_mobile" type="f1a62948:ProjectNode" />
+                <item name="digitekaplayerweb" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="valueResourceFile" />
+        <option value="Class" />
+        <option value="layoutResourceFile" />
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="D:\Stage Ingenosya\digiteka.jks" />
+    <option name="KEY_ALIAS" value="digiteka" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="ProjectId" id="1l3KlEeIc0z5kdGjlXQ0G825JQD" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="digiteka_sdk_mobile.app" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="353021081350711" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-03-08T13:11:35.450Z" />
+    <property name="ExportApk.ApkPath" value="D:\DIGITEKA\app" />
+    <property name="ExportApk.BuildVariants" value="debug" />
+    <property name="ExportApk.SignV2" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android-custom-viewC:/Users/NASANDRATRA/.gradle/caches/modules-2/files-2.1/com.google.android.exoplayer/exoplayer-ui/2.11.1/45a13b9d541c35d6742a4cc840ec5ff07042928f/exoplayer-ui-2.11.1-sources.jar!/com/google/android/exoplayer2/ui/PlayerView.java_SELECTED" value="PlayerView" />
+    <property name="android-custom-viewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-28/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-viewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-viewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-30/android/view/ViewGroup.java_SELECTED" value="ViewGroup" />
+    <property name="android-custom-viewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-30/android/widget/FrameLayout.java_SELECTED" value="FrameLayout" />
+    <property name="android-custom-viewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-30/android/widget/RelativeLayout.java_SELECTED" value="RelativeLayout" />
+    <property name="android-custom-viewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-30/android/widget/ScrollView.java_SELECTED" value="ScrollView" />
+    <property name="android-custom-viewD:/DIGITEKA/digiteka/src/main/java/mg/ima/digiteka/PlayerControlView.java_SELECTED" value="PlayerControlView" />
+    <property name="android-custom-viewD:/DIGITEKA/digitekaplayerweb/src/main/java/com/digiteka/sdk/ScrollableWebView.java_SELECTED" value="ScrollableWebView" />
+    <property name="android-custom-viewD:/DIGITEKA/digitekaplayerweb/src/main/java/mg/ima/digitekaplayerweb/ScrollableWebView.java_SELECTED" value="ScrollableWebView" />
+    <property name="android.recentlyUsedThemes" value="Theme.Design.Light&#10;Theme.MaterialComponents.NoActionBar&#10;Theme.AppCompat.DayNight.NoActionBar&#10;Theme.Design.Light.NoActionBar&#10;Theme.AppCompat.DayNight" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/digitekaplayerweb/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/digitekaplayerweb/src/main/assets" />
+    <property name="multi-representation-previewC:/Users/NASANDRATRA/.gradle/caches/modules-2/files-2.1/com.google.android.exoplayer/exoplayer-ui/2.11.1/45a13b9d541c35d6742a4cc840ec5ff07042928f/exoplayer-ui-2.11.1-sources.jar!/com/google/android/exoplayer2/ui/PlayerView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-28/android/view/View.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-30/android/view/ViewGroup.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-30/android/widget/FrameLayout.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-30/android/widget/RelativeLayout.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/NASANDRATRA/AppData/Local/Android/Sdk/sources/android-30/android/widget/ScrollView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewD:/DIGITEKA/digiteka/src/main/java/mg/ima/digiteka/PlayerControlView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewD:/DIGITEKA/digitekaplayerweb/src/androidTest/java/ScrollableWebView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewD:/DIGITEKA/digitekaplayerweb/src/main/java/com/digiteka/sdk/ScrollableWebView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewD:/DIGITEKA/digitekaplayerweb/src/main/java/mg/ima/digitekaplayerweb/ScrollableWebView.java_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="Dependencies" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Properties" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.-355626591">
+      <recent name="mg.ima.digiteka" />
+    </key>
+    <key name="android.template.-1393685225">
+      <recent name="mg.ima.digiteka_sdk_mobile" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="mg.ima.digitekaplayerweb" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\DIGITEKA\digitekaplayerweb\src\main\res\drawable" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mg.ima.digitekaplayerweb" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DIGITEKA\digitekaplayerweb\src\main\assets" />
+      <recent name="D:\DIGITEKA\digiteka\src\main\res\layout" />
+    </key>
+    <key name="android.template.1969759126">
+      <recent name="mg.ima.digiteka_sdk_mobile" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="mg.ima.digitekaplayerweb" />
+      <recent name="mg.ima.digiteka_sdk_mobile" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="digiteka_sdk_mobile.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DIGITEKA [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DIGITEKA:digitekaplayerweb [build]" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/digitekaplayerweb" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.DIGITEKA [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\NASANDRATRA\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1bdda207-7609-48f3-bcb1-ce524c5073ec" name="Default Changelist" comment="" />
+      <created>1606820483396</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606820483396</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="200" y="115" key="#PSD" timestamp="1613546630020">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="200" y="115" key="#PSD/0.0.1366.738@0.0.1366.738" timestamp="1613546630020" />
+    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1613544484824">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="137" y="24" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1613544484824" />
+    <state x="677" y="68" key="#com.intellij.ide.util.MemberChooser" timestamp="1615469145797">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="677" y="68" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738@0.0.1366.738" timestamp="1615469145797" />
+    <state x="395" y="238" width="576" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1612955607884">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="395" y="238" width="576" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.738@0.0.1366.738" timestamp="1612955607884" />
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615988173211">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="116" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1615988173211" />
+    <state x="92" y="92" width="1182" height="554" key="AVDManager" timestamp="1614348095387">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="92" y="92" width="1182" height="554" key="AVDManager/0.0.1366.738@0.0.1366.738" timestamp="1614348095387" />
+    <state x="263" y="124" key="AndroidCreateResourceDirectoryDialog" timestamp="1612854388703">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="263" y="124" key="AndroidCreateResourceDirectoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1612854388703" />
+    <state x="283" y="190" key="AndroidCreateResourceFileDialog" timestamp="1617801902749">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="283" y="190" key="AndroidCreateResourceFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1617801902749" />
+    <state x="263" y="74" key="AndroidThemeDialog" timestamp="1612854242736">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="263" y="74" key="AndroidThemeDialog/0.0.1366.738@0.0.1366.738" timestamp="1612854242736" />
+    <state width="764" height="675" key="DebuggerActiveHint" timestamp="1614758534495">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="764" height="675" key="DebuggerActiveHint/0.0.1366.738@0.0.1366.738" timestamp="1614758534495" />
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1614235962375">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1614235962375" />
+    <state width="1322" height="480" key="GridCell.Tab.0.bottom" timestamp="1617805561330">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="480" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1617805561330" />
+    <state width="1322" height="480" key="GridCell.Tab.0.center" timestamp="1617805561302">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="480" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1617805561302" />
+    <state width="1322" height="480" key="GridCell.Tab.0.left" timestamp="1617805561280">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="480" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1617805561280" />
+    <state width="1322" height="480" key="GridCell.Tab.0.right" timestamp="1617805561319">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="480" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1617805561319" />
+    <state width="1322" height="438" key="GridCell.Tab.1.bottom" timestamp="1617639755418">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="438" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1617639755418" />
+    <state width="1322" height="438" key="GridCell.Tab.1.center" timestamp="1617639755403">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="438" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1617639755403" />
+    <state width="1322" height="438" key="GridCell.Tab.1.left" timestamp="1617639755403">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="438" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1617639755403" />
+    <state width="1322" height="438" key="GridCell.Tab.1.right" timestamp="1617639755403">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1322" height="438" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1617639755403" />
+    <state x="152" y="27" key="SettingsEditor" timestamp="1614348070332">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="152" y="27" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1614348070332" />
+    <state x="499" y="147" key="chooseDestDirectoryDialog" timestamp="1614934736763">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="499" y="147" key="chooseDestDirectoryDialog/0.0.1366.738@0.0.1366.738" timestamp="1614934736763" />
+    <state x="339" y="165" key="run.anything.popup" timestamp="1614069013019">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1614069013019" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1613996270131">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1613996270131" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo typeName="android.widget.RelativeLayout$LayoutParams" fieldName="topMargin" />
+        <PinnedItemInfo typeName="android.widget.RelativeLayout$LayoutParams" fieldName="rightMargin" />
+        <PinnedItemInfo typeName="android.widget.RelativeLayout$LayoutParams" fieldName="leftMargin" />
+        <PinnedItemInfo typeName="android.widget.RelativeLayout$LayoutParams" fieldName="bottomMargin" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>

@@ -1,0 +1,206 @@
+package com.digiteka.sdk;
+
+
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
+
+import androidx.fragment.app.Fragment;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the  factory method to
+ * create an instance of this fragment.
+ */
+public class DigitekaPlayerWeb extends Fragment {
+    public static boolean videoStatus = false;
+    int player_width;
+    int player_height;
+    String paramMDTK;
+    String paramZONE;
+    String paramSRC;
+    String paramURL;
+    //String paramTAGPARAM;
+    String paramGDPRCONSENTSTRING;
+    View rootview;
+    boolean test;
+    int autoplay;
+    WebView webviewPlayer;
+    String IFRAME_DIGITEKA;
+
+    public DigitekaPlayerWeb(){
+
+    }
+
+    /*public DigitekaPlayerWeb(int width , int height){
+        this.player_width=width;
+        this.player_height=height;
+    }*/
+
+    public DigitekaPlayerWeb(String mdtk, String src, String zone, String urlreferrer, String consentString, int width , int height /*String tagparamdecoded*/){
+        this.paramMDTK=mdtk;
+        this.paramSRC=src;
+        this.paramZONE=zone;
+        this.paramURL=urlreferrer;
+        this.paramGDPRCONSENTSTRING=consentString;
+        //this.paramTAGPARAM=tagparamdecoded;
+
+        this.player_width=width;
+        this.player_height=height;
+    }
+
+    public void changeDimension(int width,int height){
+        ViewGroup.LayoutParams params = new LinearLayout.LayoutParams(width,height);
+        webviewPlayer.setLayoutParams(params);
+    }
+
+    public void Autoplay(int p){
+        this.autoplay=p;
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    public void changeControll(boolean b){
+        this.test=b;
+        if(this.test){
+            Log.e("TEST", "Scroll to play = true");
+            webviewPlayer.loadUrl("javascript:controll('play')");
+        }else {Log.e("TEST", "Scroll to play = false");}
+    }
+
+    // Fonction pour Obtenir l'url du client
+    public String getURLclient(String u) throws MalformedURLException {
+        URL url = new URL(u);
+        String resultat;
+        String protocol = url.getProtocol();
+        String host = url.getHost();
+        resultat= protocol + "://" + host +"/";
+        return  resultat;
+    }
+
+    @SuppressLint({"SetJavaScriptEnabled", "AddJavascriptInterface"})
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        rootview = inflater.inflate(R.layout.fragment_player_web, container, false);
+
+        // TODO : Create WebView Player
+        LinearLayout linearlayout_fragment = rootview.findViewById(R.id.digiteka_player);
+        webviewPlayer = new WebView(getContext());
+        ViewGroup.LayoutParams params = new ActionBar.LayoutParams(player_width,player_height);
+        webviewPlayer.setLayoutParams(params);
+        linearlayout_fragment.addView(webviewPlayer);
+
+        WebSettings webSettings = webviewPlayer.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webviewPlayer.setWebViewClient(new WebViewClient() {
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return false;
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+                Log.e("TEST","PAGE STARTED ! ! ! ! ! ");
+            }
+
+        });
+        webviewPlayer.setWebChromeClient(new WebChromeClient());
+        Log.d("URL_REFERRER","URL_REFERRER ="+paramURL+"");
+
+
+        //CURRENT VERSION
+        // TODO : page html without Autoplay
+        IFRAME_DIGITEKA = "<html>\n" +
+                "<head>\n" +
+                "    <meta charset=\"UTF-8\">\n" +
+                "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                "    <link rel='canonical' href='"+paramURL+"'>\n" +
+                "    <style type=\"text/css\">\n" +
+                "        body{\n" +
+                "            margin: 0;\n" +
+                "            padding: 0;\n" +
+                "        }\n" +
+                "\n" +
+                "        iframe {\n" +
+                "            position: absolute;\n" +
+                "            width: 100%;\n" +
+                "            height: 100%;\n" +
+                "            top: 0;\n" +
+                "            left: 0;\n" +
+                "        }\n" +
+                "    </style>\n" +
+                "    <title>Digiteka Player</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "    <iframe id=\"frame\"\n" +
+                "        frameborder=\"0\"\n" +
+                "        scrolling='no' marginwidth='0' marginheight='0' hspace='0' vspace='0' allowfullscreen='true' allow='autoplay'" +
+                "        src='https://www.ultimedia.com/deliver/generic/iframe/mdtk/"+paramMDTK+"/src/"+paramSRC+"/zone/"+paramZONE+"/showtitle/1/gdprconsentstring/"+paramGDPRCONSENTSTRING+"?urlfacebook="+paramURL+"&tagparamdecoded=video_app&sa=D&ust=1586938702508000&usg=AOvVaw0EoSE28fXl4HfVg-fQrA4n'>" +
+                "    </iframe>\n" +
+                "\n" +
+                "<script type=\"text/javascript\" >" +
+                        "function controll(p){\n" +
+                        "  var controll = document.getElementById(\"frame\").contentWindow.postMessage(p,\"*\") ;\n" +
+                        "  console.log(\"je suis dans la fonction 'controll' \");\n" +
+                        "  return controll" +
+                        "}" +
+                        "if ("+this.autoplay+" !== 1) {" +
+                            "window.onload = function() {\n" +
+                            "      controll('pause');\n" +
+                            "      console.log(\"function pause() called\");\n" +
+                            "}\n" +
+                        "}" +
+                        "else {" +
+                                "window.onload = function() {\n" +
+                                "      controll('play');\n" +
+                                "      console.log(\"function play() called\");\n" +
+                                "}\n" +
+                                "Android.setStatusVideoPlay(true);" +
+                         "}" +
+                        "window.addEventListener(\"message\", function (message) { \n" +
+                        "       if(message.data=='event=played')Android.setStatusVideoPlay(true);\n" +
+                        "       if(message.data=='event=paused')Android.setStatusVideoPlay(false);\n" +
+                        " }, false);\n" +
+                "</script>\n" +
+                "</body>\n" +
+                "</html>";
+
+        Log.e("IFRAME_DIGITEKA", ""+IFRAME_DIGITEKA);
+        try {
+            webviewPlayer.loadDataWithBaseURL(getURLclient(paramURL) /*"http://www.urlduclient.com/"*/, IFRAME_DIGITEKA, null, null, null);
+            Log.e("URL_CLIENT", "L'url du client est : "+getURLclient(paramURL));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        webviewPlayer.addJavascriptInterface(new JavascriptInterface(),"Android");
+
+        return rootview;
+    }
+
+
+    // TODO : Connexion avec Javascript
+    class JavascriptInterface{
+
+        @android.webkit.JavascriptInterface
+        public void setStatusVideoPlay(boolean status){
+            Log.e("VIDEO_STATUS","--------------------------------------------------setStatusVideoPlay ="+status);
+            DigitekaPlayerWeb.videoStatus = status;
+        }
+    }
+}

@@ -1,0 +1,15 @@
+com/digiteka/sdk/BuildConfig.java
+ com.digiteka.sdk.BuildConfig
+com/digiteka/sdk/DigitekaEvent.java
+ com.digiteka.sdk.DigitekaEvent
+com/digiteka/sdk/Digiteka.java
+ com.digiteka.sdk.Digiteka
+ com.digiteka.sdk.Digiteka$1
+ com.digiteka.sdk.Digiteka$2
+ com.digiteka.sdk.Digiteka$2$1
+ com.digiteka.sdk.Digiteka$2$1$1
+ com.digiteka.sdk.Digiteka$2$2
+com/digiteka/sdk/DigitekaPlayerWeb.java
+ com.digiteka.sdk.DigitekaPlayerWeb
+ com.digiteka.sdk.DigitekaPlayerWeb$1
+ com.digiteka.sdk.DigitekaPlayerWeb$JavascriptInterface

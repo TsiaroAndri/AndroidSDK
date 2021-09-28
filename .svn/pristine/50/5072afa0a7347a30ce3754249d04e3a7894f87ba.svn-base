@@ -1,0 +1,582 @@
+package mg.ima.digitekaplayerweb;
+
+import android.annotation.SuppressLint;
+import android.app.ActionBar;
+import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewManager;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.solver.state.State;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+
+public class DigitekaWeb extends PlayerWebFragment{
+    public View digitekaContainer;
+    public Context context;
+    public int margin_V;
+    public int margin_H;
+    public int sizeVP;
+    String mdtk;
+    String src;
+    String zone;
+    String urlreferrer;
+    String tagparamdecoded;
+    String gdprconsentstring;
+    public String position;
+    int autoP; //paramètre de déclenchement du player
+    //DigitekaEvent event;
+    public RelativeLayout r;
+    public Button btn_close;
+
+
+    public  static DigitekaWeb INSTANCE;
+    public PlayerWebFragment playerWebFragment ;
+    private int temp0 = 0;
+    private /*static*/ int temp100 = 0;
+    private /*static*/ int instance = 0;
+    private /*static*/ int count = 0;
+    private /*static*/ int visible = 0;
+    private /*static*/ int count_autoP = 0;
+    private boolean firstApparition = true;
+    private boolean visibility=true;
+    private /*static*/ int countApparition=0;
+
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public DigitekaWeb(View v,
+                       Context ctx,
+                       String srcParams ,
+                       int autoplay ,
+                       String urlreferrerParams ,
+                       String consentString ,
+                       String mdtkParams, String zoneParams , String tagparamdecodedParams,
+                       int size, String pst, int margV, int margH
+                      ){
+        //super(ViewGroup.LayoutParams.MATCH_PARENT, 750);
+        margin_V=margV;
+        margin_H=margH;
+        position = pst;
+        sizeVP=size;
+        digitekaContainer= v;
+        context = ctx;
+        //event = (DigitekaEvent) ctx;
+        mdtk=mdtkParams;
+        src=srcParams;
+        zone=zoneParams;
+        urlreferrer=urlreferrerParams;
+        gdprconsentstring=consentString;
+        tagparamdecoded=tagparamdecodedParams;
+        autoP=autoplay;
+
+        /*playerWebFragment = new PlayerWebFragment(MATCH_PARENT, 750);
+        playerWebFragment = new PlayerWebFragment(mdtk,src,zone,urlreferrer,tagparamdecoded);*/
+
+        showPlayer();
+
+        Log.e("CONST","OK") ;
+
+    }
+
+    public DigitekaWeb() {
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public static void init(View view,
+                                Context context,
+                                String VideoID ,
+                                int mode ,
+                                String URL_REFERRER ,
+                                String Consent_String ,
+                                String MDTK, String ZONE , String tagparamdecodedParams ,
+                                int size, String position, int margV, int margH
+                               ){
+        //if(INSTANCE == null){
+            INSTANCE = new DigitekaWeb(view,
+                    context,
+                    VideoID ,
+                    mode,
+                    URL_REFERRER ,
+                    Consent_String,
+                    MDTK, ZONE , tagparamdecodedParams,
+                    size, position, margV, margH);
+            Log.e("NULL","OK") ;
+       // }
+
+        Log.e("NOT NULL","OK") ;
+    }
+
+    /**
+     * positionner le player en haut ou en bas
+     * @param p
+     * @return
+     */
+    public int setPositionY (String p, ViewGroup v){
+        /*String[] mots;
+         mots = p.split("_");
+        char varchar1 = mots[0].charAt(0);*/
+        int posY=0;
+        if (charV(p)=='t') {
+            if(v instanceof RelativeLayout){
+                posY= RelativeLayout.ALIGN_PARENT_TOP;
+            }
+            else if(v instanceof FrameLayout){
+                posY=Gravity.TOP;
+            }
+            else if(v instanceof ConstraintLayout){
+                posY=ConstraintSet.TOP;
+            }
+        }
+        else if(charV(p)=='b')
+            {
+                if(v instanceof RelativeLayout){
+                    posY= RelativeLayout.ALIGN_PARENT_BOTTOM;
+                }
+                else if(v instanceof FrameLayout){
+                    posY=Gravity.BOTTOM;
+                }
+                else if(v instanceof ConstraintLayout){
+                    posY=ConstraintSet.BOTTOM;
+                }
+            }
+        return  posY;
+    }
+
+    /**
+     * positionner le player à gauche ou à droite
+     * @param p
+     * @return
+     */
+    public int setPositionX (String p,ViewGroup v ){
+        /*String[] mots;
+        mots = p.split("_");
+        char varchar2 = mots[1].charAt(0);*/
+        int posX=0;
+        if (charH(p)=='l') {
+            if(v instanceof RelativeLayout){
+                posX= RelativeLayout.ALIGN_PARENT_LEFT;
+            }
+            else if(v instanceof FrameLayout){
+                posX=Gravity.START;
+            }
+            else if(v instanceof ConstraintLayout){
+                posX= ConstraintSet.LEFT;
+            }
+        }
+        else if(charH(p)=='r'){
+            if(v instanceof RelativeLayout){
+                posX= RelativeLayout.ALIGN_PARENT_RIGHT;
+            }
+            else if(v instanceof FrameLayout){
+                posX=Gravity.END;
+            }
+            else if(v instanceof ConstraintLayout){
+                posX= ConstraintSet.RIGHT;
+            }
+        }
+        return  posX;
+    }
+
+    public char charH(String p){
+        String[] mots;
+        char varcharH;
+        mots = p.split("_");
+        varcharH= mots[1].charAt(0);
+        return varcharH;
+    }
+
+    public char charV(String p){
+        String[] mots;
+        char varcharV;
+        mots = p.split("_");
+        varcharV= mots[0].charAt(0);
+        return varcharV;
+    }
+
+    public int setMargin_H(int p) {
+        int M_H;
+        M_H = p*10;
+        return M_H;
+    }
+
+    public int setMargin_V(int p) {
+        int M_V;
+        M_V = p*10;
+        return M_V;
+    }
+
+
+    /**
+     * retourne la Taille du Visible Player en %
+     * @param taille
+     * @return
+     */
+    public int setSize(int taille) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((AppCompatActivity)context).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        int result=0;
+        result= (metrics.widthPixels * taille)/100;
+        return  result;
+    }
+
+    @SuppressLint("ResourceAsColor")
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public void showPlayer() {
+
+          playerWebFragment = new PlayerWebFragment(MATCH_PARENT, 750);
+          playerWebFragment = new PlayerWebFragment(mdtk,src,zone,urlreferrer,gdprconsentstring,tagparamdecoded);
+
+          LinearLayout digiteka = new LinearLayout(context);
+          digiteka.setId(View.generateViewId());
+          LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(MATCH_PARENT, WRAP_CONTENT);
+          ((ViewGroup)digitekaContainer).addView(digiteka, llp);
+
+
+           Log.e("TEST","mdtk="+mdtk);
+           FragmentManager fm = ((FragmentActivity)context).getSupportFragmentManager();
+           FragmentTransaction ft=fm.beginTransaction();
+           ft.add(digiteka.getId(), playerWebFragment, "player").commit();
+
+
+           //recherche du view parent du container du digiteka
+           View parent = (View) digitekaContainer.getParent();
+           View parentdigiteka=parent;
+           if (parent==null){
+               Log.e("TEST", "digiteka.Container.getParent() is null");
+           }
+           else{
+              while(!(parent instanceof  ScrollView)){
+                  View newparent = (View) ((ViewGroup) parent).getParent();
+                  parent=newparent;
+              }
+           }
+
+           //Ajout du View dynamique pour la vue digiteka d'en haut dans le View GrandParent
+            ViewGroup grandparent = (ViewGroup) parent.getParent();
+
+            /** CREATION DU LAYOUT DU VISIBLE PLAYER**/
+            RelativeLayout toplayout = new RelativeLayout(context);
+            toplayout.setId(View.generateViewId());
+
+            /** POSITIONNEMENT DU VISIBLE PLAYER PAR RAPPORT AU PARENT DE L'APPLICATION **/
+            RelativeLayout.LayoutParams relative = new RelativeLayout.LayoutParams(setSize(sizeVP),315);
+            FrameLayout.LayoutParams frame = new FrameLayout.LayoutParams(setSize(sizeVP),315);
+            ConstraintLayout.LayoutParams constraintParams = new ConstraintLayout.LayoutParams(setSize(sizeVP),315);
+
+            /*constraintSet.connect(toplayout.getId(),ConstraintSet.RIGHT,grandparent.getId(),ConstraintSet.RIGHT,50);
+            constraintSet.connect(toplayout.getId(),ConstraintSet.TOP,grandparent.getId(),ConstraintSet.TOP,30);*/
+
+            /*if(grandparent instanceof RelativeLayout){
+                relative.addRule(setPositionY(position,grandparent));
+                relative.addRule(setPositionX(position,grandparent));
+            }
+            else if (grandparent instanceof FrameLayout){
+                frame.gravity=setPositionY(position,grandparent);
+                frame.gravity=setPositionX(position,grandparent);
+            }
+            else if (grandparent instanceof ConstraintLayout){
+                grandparent.addView(toplayout);
+                ConstraintSet constraintSet = new ConstraintSet();
+                constraintSet.clone((ConstraintLayout)grandparent);
+                constraintSet.connect(toplayout.getId(),ConstraintSet.BOTTOM,ConstraintSet.PARENT_ID,ConstraintSet.BOTTOM,30);
+                constraintSet.connect(toplayout.getId(),ConstraintSet.RIGHT,ConstraintSet.PARENT_ID,ConstraintSet.RIGHT,50);
+                constraintSet.applyTo((ConstraintLayout)grandparent);
+            }*/
+
+            LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(setSize(sizeVP),315);
+
+            /** DECALAGE DU VISIBLE PLAYER PAR RAPPORT AU BORD DE L'ECRAN**/
+            if ((charH(position)=='l')&&(charV(position)=='t')){ // TODO : top_left
+                /*LayoutInflater inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(setSize(sizeVP),315);*/
+                params.setMargins(setMargin_H(margin_H),setMargin_V(margin_V),0,0);
+                View v = inflater.inflate(R.layout.top_left, null);
+                r= v.findViewById(R.id.top_left);
+                /*r.getLayoutParams().width=setSize(sizeVP);
+                r.getLayoutParams().height=315;*/
+                r.setLayoutParams(params);
+                btn_close = v.findViewById(R.id.btn_close);
+                r.addView(toplayout);
+                grandparent.addView(v);
+                /*if(grandparent instanceof RelativeLayout){
+                    relative.setMargins(50,30,0,0);
+                }
+                else if(grandparent instanceof FrameLayout){
+                    frame.setMargins(50,30,0,0);
+                }
+                else if (grandparent instanceof ConstraintLayout){
+                    //constraint.setMargins(50,30,0,0);
+                }*/
+            }
+            else if  ((charH(position)=='l')&&(charV(position)=='b')) { // TODO : bottom_left
+                params.setMargins(setMargin_H(margin_H),0,0,0);
+                View v = inflater.inflate(R.layout.bottom_left, null);
+                r= v.findViewById(R.id.bottom_left);
+                params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+                params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+                v.setPadding(0,0,0,setMargin_V(margin_V));
+                r.setLayoutParams(params);
+                btn_close = v.findViewById(R.id.btn_close);
+                r.addView(toplayout);
+                grandparent.addView(v);
+                /*if(grandparent instanceof RelativeLayout){
+                    relative.setMargins(50,0,0,30);
+                }
+                else if(grandparent instanceof FrameLayout){
+                    frame.setMargins(50,0,0,30);
+                }
+                else if (grandparent instanceof ConstraintLayout){
+                   // constraint.setMargins(50,30,0,0);
+                }*/
+            }
+            else if  ((charH(position)=='r')&&(charV(position)=='t')) { // TODO : top_right
+                params.setMargins(0,setMargin_V(margin_V),setMargin_H(margin_H),0);
+                View v = inflater.inflate(R.layout.top_right, null);
+                r= v.findViewById(R.id.top_right);
+                params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                r.setLayoutParams(params);
+                btn_close = v.findViewById(R.id.btn_close);
+                r.addView(toplayout);
+                grandparent.addView(v);
+                /*if(grandparent instanceof RelativeLayout){
+                    relative.setMargins(0,30,50,0);
+                }
+                else if(grandparent instanceof FrameLayout){
+                    frame.setMargins(0,30,50,0);
+                }
+                else if (grandparent instanceof ConstraintLayout){
+                    //constraint.setMargins(50,30,0,0);
+                }*/
+            }
+            else if  ((charH(position)=='r')&&(charV(position)=='b')) { // TODO : bottom_right
+                params.setMargins(0,0,setMargin_H(margin_H),0);
+                View v = inflater.inflate(R.layout.bottom_right, null);
+                r= v.findViewById(R.id.bottom_right);
+                params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+                params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);
+                v.setPadding(0,0,0,setMargin_V(margin_V));
+                r.setLayoutParams(params);
+                btn_close = v.findViewById(R.id.btn_close);
+                r.addView(toplayout);
+                grandparent.addView(v);
+                /*if(grandparent instanceof RelativeLayout){
+                    relative.setMargins(0,0,50,30);
+                }
+                else if(grandparent instanceof FrameLayout){
+                    frame.setMargins(0,0,50,30);
+                }
+                else if (grandparent instanceof ConstraintLayout){
+                   // constraint.setMargins(50,30,0,0);
+                }*/
+            }
+
+            /** CREATION DU BOUTON FERMETURE DU VISIBLE PLAYER ET AJOUT DANS LE LAYOUT PARENT DE L'APPLICATION**/
+            /*RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(60,60);
+            FrameLayout.LayoutParams fp = new FrameLayout.LayoutParams(60,60);
+            ConstraintLayout.LayoutParams cp = new ConstraintLayout.LayoutParams(60,60);
+            lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
+            fp.gravity=Gravity.END;
+            cp.rightToRight= ConstraintSet.RIGHT;
+            if (grandparent instanceof RelativeLayout){
+                lp.setMargins(0,8,8,0);
+                grandparent.addView(toplayout, relative);
+            }
+            else if(grandparent instanceof FrameLayout){
+                fp.setMargins(0,8,8,0);
+                grandparent.addView(toplayout, frame);
+            }
+            else if (grandparent instanceof ConstraintLayout){
+                cp.setMargins(0,8,8,0);
+                //grandparent.addView(toplayout);
+
+            }
+
+            Button btnclose = new Button(context);
+            btnclose.setBackgroundResource(R.drawable.ic_baseline_close_24);
+
+            //grandparent.addView(toplayout, rlp);
+            //grandparent.addView(toplayout, frame);
+
+            toplayout.setVisibility(View.INVISIBLE);
+
+            if(autoP==1){
+                playerWebFragment.Autoplay(1);
+            }*/
+
+        //Detection de l'évenement Scroll
+           parent.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+               @Override
+               public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+
+                   //Obtenir la hauteur de l'écran
+                   int demi= digitekaContainer.getHeight() / 2;
+                   int quart= (3 * digitekaContainer.getHeight()) / 4;
+                   DisplayMetrics metrics = new DisplayMetrics();
+                   ((AppCompatActivity)context).getWindowManager().getDefaultDisplay().getMetrics(metrics);
+                   int screenHeight= metrics.heightPixels;
+                   Log.e("TEST", "Display height in px is " + screenHeight);
+
+                   Log.e("TEST","HAUTEUR du Digiteka:" + digitekaContainer.getHeight());
+                   Log.e("TEST","PositionY du Digiteka:" + digitekaContainer.getY());
+                   Log.d("TEST", "onScrollChangeForY - scrollY: " + scrollY + " oldScrollY: " + oldScrollY);
+
+
+                    /*if(((scrollY + screenHeight) >= (digitekaContainer.getY() + digitekaContainer.getHeight())) // vue 100%
+                        && (digitekaContainer.getY() >= scrollY))*/
+                   if ((((scrollY + screenHeight) >= (digitekaContainer.getY() + demi)) && (digitekaContainer.getY() >=scrollY))
+                        || ((scrollY <= (digitekaContainer.getY() + demi)) && ((digitekaContainer.getY() + digitekaContainer.getHeight()) <= (scrollY + screenHeight))))
+                   {
+                       Log.e("TEST" , "Vue 100% du DIGITEKA");
+                       firstApparition = false;
+                       temp0=0;
+                       if(temp100>0){
+                           if (instance==0) {
+                               if (digiteka.getParent() != null)  {
+                                   ((ViewGroup) digiteka.getParent()).removeView(digiteka);
+                                  /* ViewGroup parent = (ViewGroup)btnclose.getParent();
+                                   (parent).removeView(btnclose);*/
+                                   playerWebFragment.changeDimension(MATCH_PARENT, 750);
+                                   ((ViewGroup) digitekaContainer).addView(digiteka);
+                               }
+                               instance++;
+                           }
+                       }
+                       switch (autoP){
+                           case 0:{
+                               playerWebFragment.changeControll(false);
+                               break;
+                           }
+                           case 2:{
+                               if(count==0)
+                               {
+                                   playerWebFragment.changeControll(true);
+                               }
+                           }
+                           break;
+                           default:{
+                               Log.e("AUTOPLAY", "AUTOPLAY Activé");
+                           }
+                       }
+                       count++;
+                      // toplayout.setVisibility(View.INVISIBLE);
+                       r.setVisibility(View.INVISIBLE);
+                       btn_close.setVisibility(View.INVISIBLE);
+
+                       visible=0;
+                   }
+
+                   else {
+                       if (((scrollY + screenHeight) <= (digitekaContainer.getY())) //--------------------VUE 0%
+                                   || (scrollY >= (digitekaContainer.getY() +digitekaContainer.getHeight())))
+                               {
+                                   Log.e("TEST", "Vue 0% du DIGITEKA");
+
+                                  // TODO : création du VISIBLE PLAYER
+
+                                   //if (grandparent != null) {
+                                            instance=0;
+                                            if (temp0==0){
+                                                if(digiteka.getParent() != null) {
+                                                    ((ViewGroup)digiteka.getParent()).removeView(digiteka);
+                                                    playerWebFragment.changeDimension(setSize(sizeVP),315);
+                                                   // toplayout.addView(btnclose,lp);
+                                                    toplayout.addView(digiteka);
+                                                }
+                                                temp0++;
+                                            }
+                                            temp100++;
+                                            if(firstApparition){
+                                                // toplayout.setVisibility(View.INVISIBLE);
+                                                r.setVisibility(View.INVISIBLE);
+                                                btn_close.setVisibility(View.INVISIBLE);
+                                            }
+                                            else {
+                                                if(visibility && playerWebFragment.videoStatus){
+                                                    // toplayout.setVisibility(View.VISIBLE);
+                                                    r.setVisibility(View.VISIBLE);
+                                                    btn_close.setVisibility(View.VISIBLE);
+                                                }
+                                                else {
+                                                    // toplayout.setVisibility(View.INVISIBLE);
+                                                    r.setVisibility(View.INVISIBLE);
+                                                    btn_close.setVisibility(View.INVISIBLE);
+                                                }
+                                            }
+
+                                           /*if (visible==0){
+                                               toplayout.setVisibility(View.VISIBLE);
+                                               visible++;
+                                           }*/
+
+                                            /** fermeture du visible Player **/
+                                            btn_close.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View v) {
+                                                    // toplayout.setVisibility(View.INVISIBLE);
+                                                    r.setVisibility(View.INVISIBLE);
+                                                    visibility=false;
+                                                }
+                                            });
+                                   //}
+                               }
+
+                       /*else if((((digitekaContainer.getY() + demi) <= (scrollY + screenHeight)) && ((digitekaContainer.getY() + quart) >= (scrollY + screenHeight)))
+                               || (scrollY == (digitekaContainer.getY() + demi)))
+                       {
+                           Log.d("TEST", "--------------------------------------------------------Vue 50% du DIGITEKA------------------");
+                           switch (autoP){
+                               case 0:{
+                                   playerWebFragment.changeControll(false);
+                                   break;
+                               }
+                               case 2:{
+                                       if(count==0)
+                                       {
+                                         playerWebFragment.changeControll(true);
+                                       }
+                                   }
+                                   break;
+                               default:{
+                                   Log.e("AUTOPLAY", "Paramètre non pris en charge");
+                               }
+                           }
+                           count++;
+                       }*/
+                   }
+               }
+           });
+
+           //event.sdkReady();
+       }
+
+}
+

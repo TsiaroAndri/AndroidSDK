@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/digiteka_sdk_mobile.iml" filepath="$PROJECT_DIR$/.idea/modules/digiteka_sdk_mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/digiteka_sdk_mobile.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/digiteka_sdk_mobile.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/digiteka/digiteka_sdk_mobile.digiteka.iml" filepath="$PROJECT_DIR$/.idea/modules/digiteka/digiteka_sdk_mobile.digiteka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/digitekaplayerweb/digiteka_sdk_mobile.digitekaplayerweb.iml" filepath="$PROJECT_DIR$/.idea/modules/digitekaplayerweb/digiteka_sdk_mobile.digitekaplayerweb.iml" />
+    </modules>
+  </component>
+</project>

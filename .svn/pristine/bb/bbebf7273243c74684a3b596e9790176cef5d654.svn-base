@@ -1,0 +1,9 @@
+package mg.ima.digitekaplayerweb;
+
+import android.content.Context;
+import android.view.View;
+
+public interface DigitekaEvent {
+    public void sdkReady();
+    public void onError();
+}

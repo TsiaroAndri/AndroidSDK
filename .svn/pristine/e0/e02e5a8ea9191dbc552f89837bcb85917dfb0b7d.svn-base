@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/ingenosya/Documents/DIGITEKA_Android/digitekaplayerweb/build/intermediates/res/merged/release/interpolator-v21/mtrl_fast_out_slow_in.xml",
+        "source": "/Users/ingenosya/.gradle/caches/transforms-2/files-2.1/2e9b4d772a4da06bdfcffbbbb4ab3c14/material-1.2.1/res/interpolator-v21/mtrl_fast_out_slow_in.xml"
+    },
+    {
+        "merged": "/Users/ingenosya/Documents/DIGITEKA_Android/digitekaplayerweb/build/intermediates/res/merged/release/interpolator-v21/mtrl_fast_out_linear_in.xml",
+        "source": "/Users/ingenosya/.gradle/caches/transforms-2/files-2.1/2e9b4d772a4da06bdfcffbbbb4ab3c14/material-1.2.1/res/interpolator-v21/mtrl_fast_out_linear_in.xml"
+    },
+    {
+        "merged": "/Users/ingenosya/Documents/DIGITEKA_Android/digitekaplayerweb/build/intermediates/res/merged/release/interpolator-v21/mtrl_linear_out_slow_in.xml",
+        "source": "/Users/ingenosya/.gradle/caches/transforms-2/files-2.1/2e9b4d772a4da06bdfcffbbbb4ab3c14/material-1.2.1/res/interpolator-v21/mtrl_linear_out_slow_in.xml"
+    }
+]

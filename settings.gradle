@@ -1,0 +1,4 @@
+include ':digitekaplayerweb'
+include ':digiteka'
+include ':app'
+rootProject.name = "digiteka_sdk_mobile"

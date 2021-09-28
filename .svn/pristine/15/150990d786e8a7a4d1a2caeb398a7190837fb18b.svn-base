@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="link" rel='canonical'>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <title>Digiteka Player</title>
+</head>
+<body>
+    <iframe id="frame"
+        frameborder="0"
+        scrolling='no' marginwidth='0' marginheight='0' hspace='0' vspace='0' allowfullscreen='true' allow='autoplay'></iframe>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

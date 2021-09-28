@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/ingenosya/Documents/DIGITEKA_Android/digitekaplayerweb/build/intermediates/res/merged/release/layout-v21/notification_action.xml",
+        "source": "/Users/ingenosya/.gradle/caches/transforms-2/files-2.1/b234a824af7fd98a5c54fc0522824a91/core-1.3.1/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/ingenosya/Documents/DIGITEKA_Android/digitekaplayerweb/build/intermediates/res/merged/release/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/ingenosya/.gradle/caches/transforms-2/files-2.1/b234a824af7fd98a5c54fc0522824a91/core-1.3.1/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/ingenosya/Documents/DIGITEKA_Android/digitekaplayerweb/build/intermediates/res/merged/release/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/ingenosya/.gradle/caches/transforms-2/files-2.1/b234a824af7fd98a5c54fc0522824a91/core-1.3.1/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/ingenosya/Documents/DIGITEKA_Android/digitekaplayerweb/build/intermediates/res/merged/release/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/ingenosya/.gradle/caches/transforms-2/files-2.1/b234a824af7fd98a5c54fc0522824a91/core-1.3.1/res/layout-v21/notification_template_icon_group.xml"
+    }
+]
