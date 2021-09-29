@@ -1,0 +1,3 @@
+[submodule "digitekaplayerweb"]
+	path = digitekaplayerweb
+	url = https://github.com/TsiaroAndri/AndroidSDK
